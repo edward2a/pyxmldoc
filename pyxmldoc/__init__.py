@@ -1,1 +1,1 @@
-from pyxmldoc import XmlDocument
+from pyxmldoc.pyxmldoc import XmlDocument
