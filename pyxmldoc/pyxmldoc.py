@@ -13,7 +13,7 @@ class XmlDocument(object):
         self.xmldoc = {}
 
         # Get root and process it
-        root = self.souce_data.getroot()
+        root = self.source_data.getroot()
         self.xmldoc = self.load_tree(root)
 
     @staticmethod
