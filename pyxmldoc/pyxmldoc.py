@@ -10,17 +10,16 @@ class XmlDocument(object):
         self.source_data = et.parse(f)
 
     def xml_to_dict(self):
-        xmldoc = {}
+        self.xmldoc = {}
 
-        # Get root
+        # Get root and process it
         root = self.souce_data.getroot()
-        xmldoc = self.load_tree(root)
+        self.xmldoc = self.load_tree(root)
 
     @staticmethod
     def load_element(e):
         return {'attrs': e.attrib, 'children': [
             {c.tag: {'attrs': c.attrib}} for c in e.getchildren() ]}
-            
 
     def load_tree(self, e):
         return {e.tag: {'attrs': e.attrib, 'children': [
